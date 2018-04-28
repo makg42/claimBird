@@ -78,6 +78,7 @@
     result.actions.uploadMedia = ({file}) => {
       let formData = new FormData()
       formData.append('file', file)
+      res.actions.disableInput()
       $.ajax({
         url: 'https://hanodev.de:8443/api/analyzeFile',
         type: 'POST',
@@ -86,6 +87,12 @@
         contentType: false,  // tell jQuery not to set contentType
         success: function (data) {
           console.log(data)
+          const chatBotmessageData = {
+            type: 'answer',
+            message: data.chatbot_response,
+          }
+          res.actions.enableInput()
+          res.actions.displayChatbotMessage(chatBotmessageData)
         }
       })
     }
