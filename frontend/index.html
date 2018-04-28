@@ -42,20 +42,6 @@
           'submit' : 'Send'
         }
       },
- conversationWindow: {
-      ratingOptions: [
-        {
-          id: 1,
-          label: 'yes',
-          comment: false
-        },
-        {
-          id: 2,
-           label: 'no',
-          comment: true
-        }
-      ],
-    }
   ).then(function(result) {
     var API = result.api;
     API.addVariable('acme_airlines_en/Name', 'John Doe');
