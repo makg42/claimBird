@@ -1,67 +1,69 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <title>ClaimBird Abwicklung</title>
- <script src="https://sdk.inbenta.io/chatbot/1/inbenta-chatbot-sdk.js"></script>
+    <title>ClaimBird Abwicklung</title>
+    <script src="https://sdk.inbenta.io/chatbot/1/inbenta-chatbot-sdk.js"></script>
 </head>
-<body >
-    <div class="inbenta-bot"></div>
+<body>
+<div class="inbenta-bot"></div>
 
 </body>
 </html>
 <script>
- var InbentaAuth = InbentaChatbotSDK.createFromDomainKey("eyJ0eXBlIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJwcm9qZWN0IjoiaGFja2l0b3ZlcjAyX2NoYXRib3RfZGUiLCJkb21haW5fa2V5X2lkIjoiQldyajdoV2VnakN6cUhEcWtRUnd0dzo6In0.D3RJRt5J5T3bq0K7oQRcQ87MOt6MYB2CdF0tAWeZ78dtSkrHVdKvweqDvZsPTZRZGSpKXkNCR55I1iL1PCSuHA", "GhQU2KudDFAL+Vv5Vsm75mro4rN2LXLFW7PYwx9v5/I=");
+  var InbentaAuth = InbentaChatbotSDK.createFromDomainKey('eyJ0eXBlIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJwcm9qZWN0IjoiaGFja2l0b3ZlcjAyX2NoYXRib3RfZGUiLCJkb21haW5fa2V5X2lkIjoiQldyajdoV2VnakN6cUhEcWtRUnd0dzo6In0.D3RJRt5J5T3bq0K7oQRcQ87MOt6MYB2CdF0tAWeZ78dtSkrHVdKvweqDvZsPTZRZGSpKXkNCR55I1iL1PCSuHA', 'GhQU2KudDFAL+Vv5Vsm75mro4rN2LXLFW7PYwx9v5/I=')
   InbentaChatbotSDK.build(InbentaAuth,
     {
-      lang:'de',
-      answers:{
+      lang: 'de',
+      answers: {
         answerAttributes: ['ANSWER_TEXT'],
         sideBubbleAttributes: ['SIDEBUBBLE_TEXT'],
         maxRelatedContents: 3,
       },
-      proactiveWelcome : true,
+      proactiveWelcome: true,
       delayOnAnswer: 700,
       usertype: 0,
-      environment: "development",
+      environment: 'development',
       launcher: {
-        title:"claimBird Assitant"
+        title: 'claimBird Assitant'
       },
       labels: {
         de: {
-          'yes' : 'Sure',
-          'no' : 'Nope',
-          'generic-error-message' : 'Please try to answer again',
-          'enter-question' : 'Antwort eintippen',
-          'interface-title' : 'claimBird Assitent',
-          'guest-name' : 'You',
-          'help-question' : 'What can I ?',
-          'thanks' : 'Thank you!',
-          'rate-content' : 'Did it help?',
-          'form-message' : 'Please tell us why',
-          'submit' : 'Send'
+          'yes': 'Sure',
+          'no': 'Nope',
+          'generic-error-message': 'Please try to answer again',
+          'enter-question': 'Antwort eintippen',
+          'interface-title': 'claimBird Assitent',
+          'guest-name': 'You',
+          'help-question': 'What can I ?',
+          'thanks': 'Thank you!',
+          'rate-content': 'Did it help?',
+          'form-message': 'Please tell us why',
+          'submit': 'Send'
         }
- },
- sanitizerOptions : {
- allowedTags: ['h1','h2','h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
- 'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
- 'table','input', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre','img','iframe'],
- allowedAttributes: {
- a: [ 'href', 'name', 'target' ],
- iframe:['src'],
- img: [ 'src' ],
- input: [ 'name', 'type' ]
- },
- allowedClasses: {
- 'p': [ 'test']
- }
-   }
+      },
+      sanitizerOptions: {
+        allowedTags: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
+          'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
+          'table', 'input', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'img', 'iframe'],
+        allowedAttributes: {
+          a: ['href', 'name', 'target'],
+          iframe: ['src'],
+          img: ['src'],
+          input: ['name', 'type']
+        },
+        allowedClasses: {
+          'p': ['test']
+        }
+      },
+      closeButton: {
+        visible: false
+      },
     }
-  ).then(function(result) {
-    var API = result.api;
-    API.addVariable('acme_airlines_en/Name', 'John Doe');
-  });
+  ).then(function (result) {
+    var API = result.api
+    API.addVariable('acme_airlines_en/Name', 'John Doe')
+  })
 </script>
