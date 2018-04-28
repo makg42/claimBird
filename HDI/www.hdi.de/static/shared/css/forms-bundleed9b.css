@@ -1,0 +1,123 @@
+/*-- Color variables --*/
+form.ft-debug-form {
+  border: 5px solid crimson;
+}
+label.with-inline-hint {
+  display: initial;
+}
+label.with-inline-hint + div {
+  margin-top: 10px;
+}
+.validation-error div.radio span {
+  background-position: -85px 0px;
+}
+.validation-error div.checker span {
+  background-position: -84px 0px;
+}
+.form-group label {
+  text-transform: none;
+}
+.form-group.form-group-checkboxes-horizontal .form-group-checkbox label {
+  text-transform: uppercase;
+}
+.form-group.form-group-checkboxes-vertical .form-group-checkbox label {
+  color: #000;
+}
+.formHint.formHintInline {
+  margin: 0px 5px 0px;
+}
+.form-error.tooltip:not(.tooltip-default) {
+  z-index: 5;
+}
+.form-error.tooltip:not(.tooltip-default) .tooltip-inner.form-error-content {
+  font-size: 14px;
+  font-family: "hdi-gerling_sansregular", Arial, Helvetica, Verdana, sans-serif;
+  line-height: 1.42857;
+  border-radius: 3px;
+}
+.form-error.tooltip:not(.tooltip-default) .tooltip-arrow.form-error-arrow {
+  display: block;
+  top: 100%;
+  margin-top: 3px;
+}
+@media only screen and (min-width: 1259px) {
+  .scrollable.dropdown-menu {
+    height: auto;
+    max-height: 350px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+.formWrapDummy .chosen-container {
+  display: block;
+}
+.formWrapDummy .chosen-container .chosen-drop .chosen-search {
+  display: block;
+  position: absolute;
+  top: -65.7167px;
+}
+.formWrapDummy .chosen-container .chosen-drop .chosen-search input {
+  border: none !important;
+}
+.formWrapDummy .chosen-container .chosen-drop .chosen-results {
+  max-height: none;
+}
+.formWrapDummy .chosen-container .chosen-drop li {
+  display: list-item;
+  border: none;
+}
+.formWrapDummy .chosen-container .chosen-drop li.group-result {
+  font-size: 18px;
+  font-family: "hdi-gerling_sansbold", Arial, Helvetica, Verdana, sans-serif;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+.formWrapDummy .chosen-container .chosen-drop li.active-result {
+  cursor: pointer;
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.formWrapDummy .chosen-container .chosen-drop > .jscrollpane {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  max-height: 432px;
+  overflow: auto;
+}
+.formWrapDummy .chosen-with-drop .chosen-single span {
+  visibility: hidden;
+}
+@media only screen and (max-width : 1259px) {
+  .formWrapDummy .chosen-container .chosen-drop .chosen-search {
+    top: -65.7167px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.group-result {
+    font-size: 18px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.active-result {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width : 992px) {
+  .formWrapDummy .chosen-container .chosen-drop .chosen-search {
+    top: -52.85px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.group-result {
+    font-size: 16px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.active-result {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width : 767px) {
+  .formWrapDummy .chosen-container .chosen-drop .chosen-search {
+    top: -47.15px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.group-result {
+    font-size: 12px;
+  }
+  .formWrapDummy .chosen-container .chosen-drop li.active-result {
+    font-size: 10px;
+  }
+}
