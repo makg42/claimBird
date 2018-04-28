@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
  <title>ClaimBird Abwicklung</title>
  <script src="https://sdk.inbenta.io/chatbot/1/inbenta-chatbot-sdk.js"></script>
 </head>
@@ -32,7 +35,7 @@
           'yes' : 'Sure',
           'no' : 'Nope',
           'generic-error-message' : 'Please try to answer again',
-          'enter-question' : 'Antowrt eintippen',
+          'enter-question' : 'Antwort eintippen',
           'interface-title' : 'claimBird Assitent',
           'guest-name' : 'You',
           'help-question' : 'What can I ?',
@@ -41,7 +44,21 @@
           'form-message' : 'Please tell us why',
           'submit' : 'Send'
         }
-      }
+ },
+ sanitizerOptions : {
+ allowedTags: ['h1','h2','h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
+ 'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
+ 'table','input', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre','img','iframe'],
+ allowedAttributes: {
+ a: [ 'href', 'name', 'target' ],
+ iframe:['src'],
+ img: [ 'src' ],
+ input: [ 'name', 'type' ]
+ },
+ allowedClasses: {
+ 'p': [ 'test']
+ }
+   }
     }
   ).then(function(result) {
     var API = result.api;
