@@ -305,7 +305,6 @@
 
             result.actions.uploadMedia = ({file}) => {
               let formData = new FormData()
-              console.log(result);
               formData.append('file', file)
               res.actions.disableInput()
               console.log(res, API)
@@ -325,13 +324,17 @@
                   res.actions.displayChatbotMessage(chatBotmessageData)
                 },
                 error: function (jqxhr, textStatus, err) {
-                  console.log(jqxhr, textStatus, err);
-                  res.actions.enableInput();
+                  console.log(jqxhr, textStatus, err)
+                  res.actions.enableInput()
                   res.actions.displayChatbotMessage({
                     type: 'answer',
                     message: 'Ein Fehler ist aufgetreten',
-                  });
+                  })
                 }
+              })
+              res.actions.displayChatBotMessage({
+                type: 'answer',
+                message: 'Vielen Dank! Ihr Bild wird analyisiert',
               })
             }
           })
@@ -849,7 +852,8 @@
                                                                         href="https://www.hdi.de/mein-hdi/login"
                                                                         target="_blank">Login</a></div>
                                                                 <div class="dropdown"><a href="javascript:;"
-                                                                                         class="selectbox gtm-btn-r1-col6" data-toggle="dropdown"
+                                                                                         class="selectbox gtm-btn-r1-col6"
+                                                                                         data-toggle="dropdown"
                                                                                          aria-haspopup="true"
                                                                                          aria-expanded="true">Privatkunden</a>
                                                                     <ul class="dropdown-menu">

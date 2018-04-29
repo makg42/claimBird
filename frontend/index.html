@@ -48,7 +48,7 @@
         'thanks': 'Danke!',
         'rate-content': 'Did it help?',
         'form-message': 'Please tell us why',
-        'submit': 'Senden'
+        'submit': 'Senden',
       }
     },
     sanitizerOptions: {
@@ -109,6 +109,10 @@
           });
         }
       })
+      res.actions.displayChatBotMessage({
+        type: 'answer',
+        message: 'Vielen Dank! Ihr Bild wird analyisiert',
+      });
     }
   })
 
