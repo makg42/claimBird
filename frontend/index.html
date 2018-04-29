@@ -19,9 +19,9 @@
         crossorigin="anonymous"></script>
 <script>
 
-  var InbentaAuth = InbentaChatbotSDK.createFromDomainKey('eyJ0eXBlIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJwcm9qZWN0IjoiaGFja2l0b3ZlcjAyX2NoYXRib3RfZGUiLCJkb21haW5fa2V5X2lkIjoiQldyajdoV2VnakN6cUhEcWtRUnd0dzo6In0.D3RJRt5J5T3bq0K7oQRcQ87MOt6MYB2CdF0tAWeZ78dtSkrHVdKvweqDvZsPTZRZGSpKXkNCR55I1iL1PCSuHA', 'GhQU2KudDFAL+Vv5Vsm75mro4rN2LXLFW7PYwx9v5/I=')
+  const InbentaAuth = InbentaChatbotSDK.createFromDomainKey('eyJ0eXBlIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJwcm9qZWN0IjoiaGFja2l0b3ZlcjAyX2NoYXRib3RfZGUiLCJkb21haW5fa2V5X2lkIjoiQldyajdoV2VnakN6cUhEcWtRUnd0dzo6In0.D3RJRt5J5T3bq0K7oQRcQ87MOt6MYB2CdF0tAWeZ78dtSkrHVdKvweqDvZsPTZRZGSpKXkNCR55I1iL1PCSuHA', 'GhQU2KudDFAL+Vv5Vsm75mro4rN2LXLFW7PYwx9v5/I=')
 
-  var config = {
+  const config = {
     lang: 'de',
     answers: {
       answerAttributes: ['ANSWER_TEXT'],
@@ -40,13 +40,13 @@
       de: {
         'yes': 'Ja',
         'no': 'Nein',
-        'generic-error-message': 'Please try to answer again',
+        'generic-error-message': 'Bitte versuchen Sie, erneut zu antworten',
         'enter-question': 'Antwort eintippen',
         'interface-title': 'claimBird Assistent',
         'guest-name': 'Du',
-        'help-question': 'What can I ?',
+        'help-question': 'Wie kann ich helfen?',
         'thanks': 'Danke!',
-        'rate-content': 'Did it help?',
+        'rate-content': 'Habe ich geholfen?',
         'form-message': 'Please tell us why',
         'submit': 'Senden',
       }
@@ -74,14 +74,9 @@
 
     res = result
     res.actions.showUploadMediaButton()
-    console.log(config)
-    console.log(result)
-    var API = result.api
-    API.addVariable('acme_airlines_en/Name', 'John Doe')
 
     result.actions.uploadMedia = ({file}) => {
-      let formData = new FormData()
-      console.log(result);
+      let formData = new FormData() // send uploaded file via multipart form to backend
       formData.append('file', file)
       res.actions.disableInput()
       console.log(res, API)
