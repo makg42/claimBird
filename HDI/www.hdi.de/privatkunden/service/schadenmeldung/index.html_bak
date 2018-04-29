@@ -26,6 +26,13 @@
 <meta name="page-locale-name" content="">
 <!--ls:end[meta-page-locale-name]-->
 <!--ls:begin[google-tag-manager]-->
+   <script>
+     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+     '../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+     })(window,document,'script','dataLayer','GTM-P9DG8G');
+   </script>
   <!--ls:end[google-tag-manager]--><!--ls:begin[stylesheet]--><link type="text/css" href="../../../assets/static/fix.css" rel="stylesheet">
 <!--ls:end[stylesheet]-->
 <!--ls:begin[script]-->
@@ -234,10 +241,11 @@
               visible: true
             }
           };
+console.log(config);        
+config.html = { 'conversation-window-header': '<div class="inbenta-bot__chat__header"> <div class="header__title"> <img src="custom_icon" style=" width: 30px; margin: 0; margin-right: 15px"> SDK Demo </div> <conversation-window-header-buttons /> </div>' }
+console.log("2" , config);
   
  InbentaChatbotSDK.build(InbentaAuth, config).then(function (result) {
-	 
-
           res = result
           res.actions.showUploadMediaButton()
           console.log(config);
