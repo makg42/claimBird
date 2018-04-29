@@ -1,0 +1,24 @@
+.inbenta .inbenta-bot__chat__header {
+    background-color: #459942;
+}
+
+.inbenta .inbenta-bot__launcher {
+    background-color: #459942;
+
+}
+.inbenta .inbenta-bot__launcher:hover {
+    background-color: #459942;
+
+}
+
+
+.inbenta .inbenta-bot__chat .messages__message--received .messages__message__avatar{
+background-color: #459942;
+}
+
+
+
+/*.inbenta .messages__message--sent {
+    background-color: #63A075;
+}
+*/
