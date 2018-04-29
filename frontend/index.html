@@ -79,7 +79,6 @@
       let formData = new FormData() // send uploaded file via multipart form to backend
       formData.append('file', file)
       res.actions.disableInput()
-      console.log(res, API)
       $.ajax({
         url: 'https://hanodev.de:8443/api/analyzeFile',
         type: 'POST',

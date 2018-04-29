@@ -298,10 +298,6 @@
 
             res = result
             res.actions.showUploadMediaButton()
-            console.log(config)
-            console.log(result)
-            var API = result.api
-            API.addVariable('acme_airlines_en/Name', 'John Doe')
 
             result.actions.uploadMedia = ({file}) => {
               let formData = new FormData()
