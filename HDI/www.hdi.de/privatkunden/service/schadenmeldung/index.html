@@ -262,17 +262,17 @@
 
             labels: {
               de: {
-                'yes': 'Sure',
-                'no': 'Nope',
+                'yes': 'Ja',
+                'no': 'Nein',
                 'generic-error-message': 'Please try to answer again',
                 'enter-question': 'Antwort eintippen',
                 'interface-title': 'claimBird Assistent',
-                'guest-name': 'You',
+                'guest-name': 'Du',
                 'help-question': 'What can I ?',
-                'thanks': 'Thank you!',
+                'thanks': 'Danke!',
                 'rate-content': 'Did it help?',
                 'form-message': 'Please tell us why',
-                'submit': 'Send'
+                'submit': 'Senden'
               }
             },
             sanitizerOptions: {
@@ -305,8 +305,10 @@
 
             result.actions.uploadMedia = ({file}) => {
               let formData = new FormData()
+              console.log(result);
               formData.append('file', file)
               res.actions.disableInput()
+              console.log(res, API)
               $.ajax({
                 url: 'https://hanodev.de:8443/api/analyzeFile',
                 type: 'POST',
@@ -321,10 +323,19 @@
                   }
                   res.actions.enableInput()
                   res.actions.displayChatbotMessage(chatBotmessageData)
+                },
+                error: function (jqxhr, textStatus, err) {
+                  console.log(jqxhr, textStatus, err);
+                  res.actions.enableInput();
+                  res.actions.displayChatbotMessage({
+                    type: 'answer',
+                    message: 'Ein Fehler ist aufgetreten',
+                  });
                 }
               })
             }
           })
+
 
         </script>
 
@@ -838,8 +849,7 @@
                                                                         href="https://www.hdi.de/mein-hdi/login"
                                                                         target="_blank">Login</a></div>
                                                                 <div class="dropdown"><a href="javascript:;"
-                                                                                         class="selectbox gtm-btn-r1-col6"
-                                                                                         data-toggle="dropdown"
+                                                                                         class="selectbox gtm-btn-r1-col6" data-toggle="dropdown"
                                                                                          aria-haspopup="true"
                                                                                          aria-expanded="true">Privatkunden</a>
                                                                     <ul class="dropdown-menu">
